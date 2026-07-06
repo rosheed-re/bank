@@ -61,39 +61,6 @@ export default function Dashboard() {
     return (
         <section className="section container dashboard">
 
-            {/* Sidebar - Identical structure */}
-            <aside className="dash-sidebar">
-                <div className="dash-avatar">{initials}</div>
-                <h2 className="dash-name">{name}</h2>
-                <p className="dash-email">{email}</p>
-                <p className="dash-joined">
-                    Member since{' '}
-                    {new Date(joinedAt).toLocaleDateString('en-GB', {
-                        month: 'long',
-                        year: 'numeric',
-                    })}
-                </p>
-
-                <nav className="dash-nav">
-                    {['overview', 'accounts', 'activity', 'profile'].map((tab) => (
-                        <button
-                            key={tab}
-                            type="button"
-                            className={`dash-nav__link ${activeTab === tab ? 'dash-nav__link--active' : ''}`}
-                            onClick={() => setActiveTab(tab)}
-                        >
-                            {tab === 'overview' ? 'Overview' :
-                                tab === 'activity' ? 'Activity' :
-                                    tab.charAt(0).toUpperCase() + tab.slice(1)}
-                        </button>
-                    ))}
-                </nav>
-
-                <button type="button" className="btn btn--ghost dash-logout" onClick={handleLogout}>
-                    Log out
-                </button>
-            </aside>
-
             {/* Main Content */}
             <div className="dash-main">
 
