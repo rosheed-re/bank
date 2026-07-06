@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
-import { supabase } from '../lib/supabase.js'
+import { supabase } from '../supabaseClient.js'
 
 export default function Dashboard() {
     const { user, profile, logout } = useAuth()
